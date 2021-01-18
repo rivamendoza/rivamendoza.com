@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Personal from './Personal';
 import './stylesheets/Main.scss';
+import $ from 'jquery';
 
 class Main extends Component {  
     // public componentDidMount() {
@@ -10,12 +11,12 @@ class Main extends Component {
     render() {
         return (
             <section>
-                <div className="split pers" onClick={() => this.renderPersonal()}>
+                <div id="pers" className="split pers" onClick={() => this.expandPers()}>
                     <div className="centered">
                         <h1>personal riva</h1>
                     </div>
                 </div>
-                <div className="split prof" onClick={() => this.renderProfessional()}>
+                <div id="prof" className="split prof" onClick={() => this.expandProf()}>
                     <div className="centered">
                         <h1>Professional Riva.</h1>
                     </div>
@@ -24,14 +25,15 @@ class Main extends Component {
         );
     }
 
-    private renderPersonal() {
-        console.log("personal")
-        return(
-            <Personal>hi</Personal>
-        )
-    }
-    private renderProfessional() {
-        console.log("professional")
+    private expandPers() {
+        $(`#pers`).on('click', function() {
+            $(this).toggleClass('clicked');
+        });
+    }    
+    private expandProf() {
+        $(`#prof`).on('click', function() {
+            $(this).toggleClass('clicked');
+        });
     }
 }
 

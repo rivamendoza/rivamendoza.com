@@ -15,7 +15,7 @@ h1 {
     width: 100%;
     text-align: center;
     font-size: 100px;
-    color: #FAE289;
+    color: #F9DB6D;
     opacity: 1 !important;
 }
 
@@ -23,55 +23,63 @@ h1 {
     height: 100%;
     width: 50%;
     position: fixed;
-    z-index: 1;
     top: 0;
     overflow-x: hidden;
     padding-top: 20px;
-
-
 }
-
 
   
 .pers {
     left: 0;
-    // background-image: url("./../assets/pers.jpeg");
-    background-image: url("./../assets/pers_hover.jpeg");
-    background-size: cover;
-    background-repeat: no-repeat;  
+    background-color: rgba(#52B7B5, 0.8);
+
+    // background-image: url("./../assets/pers_hover.jpeg");
+    // background-size: cover;
+    // background-repeat: no-repeat;  
     transition: 0.3s;
-  
-    // opacity: 50%;
+    z-index: 1;
 
     &:hover{
         cursor: pointer;
         transition: 0.3s;
 
-        // opacity: 100%;
-
-        background-image: url("./../assets/pers.jpeg");
-        background-size: cover;
-        background-repeat: no-repeat; 
+        background-color: rgba(#52B7B5, 1);
+        // background-image: url("./../assets/pers.jpeg");
+        // background-size: cover;
+        // background-repeat: no-repeat; 
     }
 }
-  
+
+.pers.clicked{
+    width: 100% !important;
+    z-index: 10;
+}
+
 .prof {
     right: 0;
-    background-image: url("./../assets/prof.jpg");
-    background-size: cover;
-    background-repeat: no-repeat; 
-    // opacity: 50%;
+    background-color: rgba(#BC4749, 0.8);
+
+    // background-image: url("./../assets/prof.jpg");
+    // background-size: cover;
+    // background-repeat: no-repeat; 
+    z-index: 1;
     transition: 0.3s;
 
     &:hover{
         cursor: pointer;
         // opacity: 100%;
         transition: 0.3s;
+        background-color: rgba(#BC4749, 1);
 
-        background-image: url("./../assets/prof_hover.jpg");
-        background-size: cover;
-        background-repeat: no-repeat; 
+        // background-image: url("./../assets/prof_hover.jpg");
+        // background-size: cover;
+        // background-repeat: no-repeat; 
     }
+}
+
+.prof.clicked{
+    width: 100% !important;
+    z-index: 10;
 }
 
 .centered {
