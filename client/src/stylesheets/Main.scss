@@ -1,0 +1,83 @@
+@font-face {
+    font-family: 'BalsamiqSans';
+    src: local('BalsamiqSans'), url(./fonts/BalsamiqSans-Regular.ttf) format('truetype');
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'BalsamiqSans'
+}
+
+h1 {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 100px;
+    color: #FAE289;
+    opacity: 100% !important;
+}
+
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+
+
+}
+
+
+  
+.pers {
+    left: 0;
+    // background-image: url("./../assets/pers.jpeg");
+    background-image: url("./../assets/pers_hover.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;  
+    transition: 0.3s;
+  
+    // opacity: 50%;
+
+    &:hover{
+        cursor: pointer;
+        transition: 0.3s;
+
+        // opacity: 100%;
+
+        background-image: url("./../assets/pers.jpeg");
+        background-size: cover;
+        background-repeat: no-repeat; 
+    }
+}
+  
+.prof {
+    right: 0;
+    background-image: url("./../assets/prof.jpg");
+    background-size: cover;
+    background-repeat: no-repeat; 
+    // opacity: 50%;
+    transition: 0.3s;
+
+    &:hover{
+        cursor: pointer;
+        // opacity: 100%;
+        transition: 0.3s;
+
+        background-image: url("./../assets/prof_hover.jpg");
+        background-size: cover;
+        background-repeat: no-repeat; 
+    }
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
