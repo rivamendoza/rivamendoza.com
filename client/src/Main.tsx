@@ -1,28 +1,39 @@
 import React, { Component } from 'react';
-import Personal from './Personal';
+import Personal from './pages/PersonalPage';
 import './stylesheets/Main.scss';
 import $ from 'jquery';
+import { observable, action, observe } from "mobx";
+import { observer } from "mobx-react";
+import ConstructionPage from './pages/ConstructionPage';
 
+@observer
 class Main extends Component {  
-    // public componentDidMount() {
-    
-    // }
+    private underConstruction:boolean = true;
+
+    @observable
+    private expandedSection = <></>;
 
     render() {
-        return (
-            <section>
-                <div id="pers" className="split pers" onClick={() => this.expandPers()}>
-                    <div className="centered">
-                        <h1>personal riva</h1>
+        if(this.underConstruction) {
+            return (
+                <ConstructionPage></ConstructionPage>
+            )
+        } else {
+            return (
+                <section>
+                    <div id="pers" className="split pers" onClick={() => this.expandPers()}>
+                        <div className="centered">
+                            <h1>personal riva</h1>
+                        </div>
                     </div>
-                </div>
-                <div id="prof" className="split prof" onClick={() => this.expandProf()}>
-                    <div className="centered">
-                        <h1>Professional Riva.</h1>
+                    <div id="prof" className="split prof" onClick={() => this.expandProf()}>
+                        <div className="centered">
+                            <h1>Professional Riva.</h1>
+                        </div>
                     </div>
-                </div>
-            </section>
-        );
+                </section>
+            );
+        }
     }
 
     private expandPers() {
